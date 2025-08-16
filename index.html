@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Super Duper Portfolio — Dark Blue Glow</title>
+  <style>
+    :root{
+      --bg:#05060a;
+      --panel:#071028;
+      --glow:#0ea5ff;
+      --accent:#60a5fa;
+      --muted:#9aa6bf;
+      --glass: rgba(255,255,255,0.03);
+      --radius:16px;
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef8;background: radial-gradient(1200px 600px at 10% 10%, rgba(14,165,255,0.06), transparent), radial-gradient(900px 500px at 90% 90%, rgba(96,165,250,0.03), transparent), var(--bg);}
+
+    /* Layout */
+    .wrap{max-width:var(--maxw);margin:40px auto;padding:32px;border-radius:20px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 6px 30px rgba(2,6,23,0.7);backdrop-filter:blur(8px)}
+    header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:16px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--panel),rgba(8,18,36,0.6));display:flex;align-items:center;justify-content:center;box-shadow:0 6px 30px rgba(14,165,255,0.06) inset}
+    .logo svg{filter:drop-shadow(0 6px 18px rgba(14,165,255,0.15))}
+    h1{margin:0;font-size:20px;letter-spacing:0.6px}
+    p.lead{margin:0;color:var(--muted);font-size:13px}
+
+    /* Controls */
+    .controls{display:flex;gap:12px;align-items:center}
+    .btn{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(96,165,250,0.06);padding:10px 14px;border-radius:12px;color:var(--accent);cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+    .btn.ghost{color:var(--muted);border-color:transparent}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;margin-top:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));padding:22px;border-radius:16px;border:1px solid rgba(255,255,255,0.02)}
+    .hero-left h2{font-size:34px;margin:6px 0 8px}
+    .typewriter{display:inline-block;border-right:2px solid rgba(14,165,255,0.6);padding-right:6px;animation:blink 1s steps(1,end) infinite}
+    @keyframes blink{50%{border-color:transparent}}
+
+    /* Right column: illustrative "photo" grid (SVGs) */
+    .photo-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:12px}
+    .photo{height:220px;border-radius:12px;overflow:hidden;position:relative;background:linear-gradient(135deg, rgba(6,12,30,0.6), rgba(2,6,23,0.6));display:flex;align-items:center;justify-content:center}
+    .caption{position:absolute;left:12px;bottom:12px;background:linear-gradient(90deg, rgba(2,6,23,0.4), rgba(2,6,23,0.6));padding:8px 10px;border-radius:10px;font-size:13px;color:var(--muted);backdrop-filter:blur(6px)}
+
+    /* Sections */
+    section{margin-top:22px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .skills{display:flex;flex-direction:column;gap:8px}
+    .skill{display:flex;justify-content:space-between;padding:10px;border-radius:10px;background:var(--glass);border:1px solid rgba(96,165,250,0.03)}
+
+    /* project cards */
+    .project{padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);min-height:120px}
+
+    /* footer */
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* neon glow accents */
+    .neon{color:var(--glow);text-shadow:0 0 10px rgba(14,165,255,0.14),0 0 24px rgba(14,165,255,0.06)}
+    .glow-border{box-shadow:0 6px 40px rgba(14,165,255,0.06);border:1px solid rgba(14,165,255,0.06)}
+
+    /* responsive */
+    @media(max-width:1000px){.hero{grid-template-columns:1fr}.grid-3{grid-template-columns:repeat(2,1fr)}.photo{height:200px}.photo-grid{grid-template-columns:repeat(2,1fr)} }
+    @media(max-width:640px){.grid-3{grid-template-columns:1fr}.photo-grid{grid-template-columns:1fr}.wrap{margin:12px;padding:18px}}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo glow-border" aria-hidden="true">
+          <!-- simple code-bracket logo -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 7L4 12L8 17" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+            <path d="M16 7L20 12L16 17" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="neon">Albertus — Super Duper Portfolio</h1>
+          <p class="lead">Tema: gelap biru bercahaya • Tanpa foto fotografi — ilustrasi teknis & SVG</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="playToggle" class="btn" aria-pressed="false" title="Play / Pause audio">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 3v18l15-9L5 3z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span id="playLabel">Play Payphone</span>
+        </button>
+        <button id="muteBtn" class="btn ghost" title="Mute/Unmute">
+          🔈 <span id="muteLabel">Unmuted</span>
+        </button>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="card hero-left">
+          <h2>Halo, saya <span class="neon">Albertus</span></h2>
+          <div style="height:8px"></div>
+          <div style="font-size:16px;color:var(--muted)">Saya adalah seorang pelajar dan programmer yang menyukai desain antarmuka gelap, animasi halus, dan pengalaman audio-interaktif. <span class="typewriter" id="typewriter"></span></div>
+
+          <section>
+            <h3 class="neon">Tentang Saya</h3>
+            <p style="color:var(--muted)">Pengembang full-stack pemula — khusus dalam JavaScript, Python, dan sistem backend ringan. Saya suka membuat produk yang bersih, responsif, dan sedikit 'futuristik'.</p>
+          </section>
+
+          <section class="grid-3">
+            <div class="card skills">
+              <h4 class="neon">Skill</h4>
+              <div class="skill"><div>JavaScript</div><div>90%</div></div>
+              <div class="skill"><div>Python</div><div>80%</div></div>
+              <div class="skill"><div>HTML/CSS</div><div>95%</div></div>
+            </div>
+
+            <div class="card project">
+              <h4 class="neon">Project Utama</h4>
+              <p style="color:var(--muted)">Situs interaktif, CLI tools, dan microservices kecil. Contoh: sistem rekomendasi sederhana dan game 2048 berbasis web.</p>
+            </div>
+
+            <div class="card project">
+              <h4 class="neon">Hobi & Minat</h4>
+              <p style="color:var(--muted)">Membaca, membangun project open-source, dan bereksperimen dengan UI gelap.</p>
+            </div>
+          </section>
+
+          <section id="contact" style="margin-top:16px">
+            <h4 class="neon">Hubungi</h4>
+            <p style="color:var(--muted)">Email: <code style="color:var(--accent)">youremail@example.com</code> — atau kirim pesan lewat form (tidak terkoneksi pada demo ini).</p>
+          </section>
+        </div>
+`1`1
+          <!-- SVG "photos" representing programming/IT. These are illustrations (not photos) to respect 'tanpa foto' -->
+
+          <figure class="photo card" role="img" aria-label="Ilustrasi laptop coding">
+            <svg width="100%" height="100%" viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#071028" stop-opacity="0.95"/><stop offset="1" stop-color="#031025" stop-opacity="0.6"/></linearGradient>
+              </defs>
+              <rect x="0" y="0" width="500" height="300" rx="12" fill="url(#g1)" />
+              <!-- laptop base -->
+              <rect x="40" y="70" width="420" height="180" rx="10" fill="#02102a" stroke="#083154"/>
+              <rect x="60" y="90" width="380" height="120" rx="8" fill="#071a33"/>
+
+              <!-- code lines -->
+              <g transform="translate(80,100)" fill="#9fd9ff" opacity="0.95">
+                <rect x="0" y="0" width="280" height="10" rx="6"/>
+                <rect x="0" y="22" width="240" height="10" rx="6"/>
+                <rect x="0" y="44" width="200" height="10" rx="6"/>
+                <rect x="0" y="66" width="300" height="10" rx="6"/>
+              </g>
+
+              <!-- small glowing brackets -->
+              <text x="28" y="150" fill="#60a5fa" font-size="48" font-family="monospace" opacity="0.08">{ }</text>
+            </svg>
+            <figcaption class="caption">Ilustrasi: Laptop & kode — "Mengeksekusi solusi, satu baris pada satu waktu."</figcaption>
+          </figure>
+
+          <figure class="photo card" role="img" aria-label="Ilustrasi server dan jaringan">
+            <svg viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+              <rect width="500" height="300" rx="12" fill="#04102a" />
+              <!-- rack -->
+              <g transform="translate(40,36)" fill="#07263e">
+                <rect x="0" y="0" width="140" height="44" rx="6"/>
+                <rect x="0" y="60" width="140" height="44" rx="6"/>
+                <rect x="0" y="120" width="140" height="44" rx="6"/>
+              </g>
+              <!-- connections -->
+              <g stroke="#7fc7ff" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.9">
+                <path d="M220 40 C260 60, 300 60, 340 40"/>
+                <circle cx="220" cy="40" r="4" fill="#7fc7ff"/>
+                <circle cx="340" cy="40" r="4" fill="#7fc7ff"/>
+              </g>
+            </svg>
+            <figcaption class="caption">Ilustrasi: Infrastruktur & jaringan — "Menjaga sistem tetap hidup dan handal."</figcaption>
+          </figure>
+
+        </aside>
+      </div>
+
+      <section>
+        <div class="card">
+          <h3 class="neon">Galeri Ilustrasi (bukan foto)</h3>
+          <p style="color:var(--muted)">Semua gambar adalah SVG/ilustrasi.</p>
+
+          <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+            <div style="flex:1 1 260px" class="card">
+              <h4 class="neon">Ilustrasi: Editor Kode</h4>
+              <p style="color:var(--muted)">Suasana editor malam hari, fokus pada struktur sintaks dan readability.</p>
+            </div>
+
+            <div style="flex:1 1 260px" class="card">
+              <h4 class="neon">Ilustrasi: Cloud & API</h4>
+              <p style="color:var(--muted)">Mewakili layanan cloud, endpoint, dan pertukaran data.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>.
+      <div>© Albertus — Super Duper Portfolio • Tema: Gelap Biru Bercahaya</div>
+      <div style="margin-top:8px;color:var(--muted);font-size:12px"><code>payphone.mp3</code> — gantikan dengan file yang Anda punya. Autoplay mungkin diblokir oleh browser; gunakan tombol play</div>
+    </footer>
+
+    <!-- Audio element (user must provide payphone.mp3 or set proper path). Hidden native controls; controlled by buttons above -->
+    <audio id="payphoneAudio" preload="metadata" src="payphone.mp3"></audio>
+
+  </div>
+
+  <script>
+    // Typewriter text
+    const phrases = ["Pelajar • Programmer • Builder","UI gelap & neon","Membuat hal yang berfungsi"];
+    let pi = 0; let ci = 0; let forward = true;
+    const el = document.getElementById('typewriter');
+    function tick(){
+      const str = phrases[pi];
+      if(forward){ ci++; if(ci>str.length){ forward=false; setTimeout(tick,900); return }}
+      else { ci--; if(ci<0){ forward=true; pi=(pi+1)%phrases.length; setTimeout(tick,300); return }}
+      el.textContent = str.slice(0,ci);
+      setTimeout(tick,80 + Math.random()*80);
+    }
+    tick();
+
+    // Audio control
+    const audio = document.getElementById('payphoneAudio');
+    const playBtn = document.getElementById('playToggle');
+    const playLabel = document.getElementById('playLabel');
+    const muteBtn = document.getElementById('muteBtn');
+    const muteLabel = document.getElementById('muteLabel');
+
+    function updatePlayUI(){
+      const playing = !audio.paused && !audio.ended;
+      playBtn.setAttribute('aria-pressed', playing);
+      playLabel.textContent = playing? 'Pause Payphone' : 'Play Payphone';
+      playBtn.querySelector('svg').innerHTML = playing ? '<path d="M6 5h4v14H6zM14 5h4v14h-4z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>' : '<path d="M5 3v18l15-9L5 3z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>';
+    }
+
+    playBtn.addEventListener('click', ()=>{
+      if(audio.paused){
+        audio.play().catch(err=>{
+          // play might be blocked — fall back to unmuted play attempt
+          console.warn('Autoplay blocked or play error', err);
+          alert('Browser mencegah autoplay. Silakan klik OK lalu tekan Play lagi.');
+        });
+      } else { audio.pause(); }
+      setTimeout(updatePlayUI,50);
+    });
+
+    audio.addEventListener('play', updatePlayUI);
+    audio.addEventListener('pause', updatePlayUI);
+    audio.addEventListener('ended', updatePlayUI);
+
+    // Mute toggle
+    muteBtn.addEventListener('click', ()=>{
+      audio.muted = !audio.muted;
+      muteLabel.textContent = audio.muted? 'Muted' : 'Unmuted';
+      muteBtn.classList.toggle('ghost', !audio.muted);
+    });
+
+    // Accessibility: spacebar toggles play when focused
+    playBtn.addEventListener('keydown', (e)=>{ if(e.code==='Space' || e.code==='Enter'){ e.preventDefault(); playBtn.click(); }});
+
+    // ensure UI initial state
+    document.addEventListener('DOMContentLoaded', ()=>{ updatePlayUI(); muteLabel.textContent = audio.muted? 'Muted':'Unmuted'; });
+  </script>
+</body>
+</html>
